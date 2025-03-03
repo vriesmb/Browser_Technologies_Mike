@@ -2,10 +2,8 @@
 
 # Verslag Gesprekken
 
-## 28 februari 2025 - Browser Tech
-
 <details>
-<summary><strong>Klik om te openen</strong></summary>
+<summary><strong>8 februari 2025 - Browser Tech</strong></summary>
 
 ### Gesprek: Browser Tech
 
