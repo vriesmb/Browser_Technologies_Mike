@@ -129,6 +129,64 @@
     </header>
 
     <!-- <section> -->
+      <section>
+        <form action="">
+          <h2>Vul de benodigde gegevens in</h2>
+          <fieldset>
+            <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+            <label>Dag<input type="number" id="day1" name="day" min="1" max="31" placeholder="DD" required></label>
+            <span>-</span>
+            <label>Maand<input type="number" id="month1" name="month" min="1" max="12" placeholder="MM" required></label>
+            <span>-</span>
+            <label>Jaar<input type="number" id="year1" name="year" max="2025" placeholder="JAAR" required></label>
+
+            <!-- OF
+            <input type="date"> -->
+
+
+            <label>Telefoonnummer<input type="tel" placeholder="06-12345678" pattern="[0-9]{2}-[0-9]{8}" title="Voer een geldig Nederlands telefoonnummer" required></label>
+            <label>Emailadres<input type="email" placeholder="voorbeeld@domein.nl" required></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Had de overledene een bedrijf op naam staan?</legend>
+            <label><input type="radio" id="bedrijfJa"  name="bedrijfsConditie">Ja</label>
+            <label><input type="radio" id="bedrijfNee" name="bedrijfsConditie">Nee</label>
+            
+          </fieldset>
+
+          <fieldset id="bedrijfsVragen" hidden>
+            <legend>Rechtsvorm</legend>
+            <label><input class="inputsSelected" name="rechtsvorm" type="radio">B.V.</label>
+            <label><input class="inputsSelected" name="rechtsvorm" type="radio">N.V.</label>
+            <label><input class="inputsSelected" name="rechtsvorm" type="radio">V.O.F.</label>
+            <label><input class="inputsSelected" name="rechtsvorm" type="radio">Eenmanszaak</label>
+
+              <fieldset>
+                <label>
+                <input name="rechtsvorm" id="overigInput" type="radio">
+                Overig
+                </label>
+                <input data-for="overigInput" type="text">
+              </fieldset>
+              
+            
+          </fieldset>
+          <fieldset>
+            <legend>Samenstelling erfenis</legend>
+            <label>IBAN <input type="text" placeholder="NL20INGB0001234567" pattern="NL[0-9]{2}[A-Z0-9]{14}" title="Voer een geldig Nederlands IBAN in (NL + 18 cijfers/letters)" required></label>
+          </fieldset>
+        </form>
+      </section>
+
+
+
+
+
+
+
+
+
     <form action="">
       <fieldset>
         <legend>11a Gegevens van de onderneming</legend>
@@ -136,23 +194,15 @@
         <input id="company_id" type="text" inputmode="numeric" pattern="[1-9][0-9]{8}" required />
         <label for="company_name">Naam v/d Onderneming</label>
         <input id="company_name" type="text" required />
-        <fieldset id="company_information">
-          <legend>Wat is de rechtsvorm van de onderneming?</legend>
-          <select>
-            <optgroup label="Rechtsvorm">
-              <option>BV</option>
-              <option>NV</option>
-              <option>VOF</option>
-            </optgroup>
-          </select>
-          <label>Overig <input name="overig_comp_cat" type="checkbox"></label>
-          
-          <input name="overig_comp_cat" type="text">
-        </fieldset>
+        
+        
+        
+        
+        
+        
+        
+        
 
-        logica:
-        als overig selected is maak dan input veld zichtbaar om in te typen. stuurd ie data naar fieldset ofzo.
-        en zorg dat de mulitple choice niet meer zichtbaar is.
 
 
 
@@ -178,5 +228,32 @@
         <input type="number" max="9" required id="text-bsn" />
       </fieldset>
     </form>
+    <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+<!-- 
+<fieldset id="company_information">
+  <legend>Wat is de rechtsvorm van de onderneming?</legend>
+  <select>
+    <optgroup label="Rechtsvorm">
+      <option>BV</option>
+      <option>NV</option>
+      <option>VOF</option>
+    </optgroup>
+  </select>
+  <label>Overig <input name="overig_comp_cat" type="checkbox"></label>
+  
+  <input name="overig_comp_cat" type="text">
+</fieldset> -->
+
+
+<!-- logica:
+als overig selected is maak dan input veld zichtbaar om in te typen. stuurd ie data naar fieldset ofzo.
+en zorg dat de mulitple choice niet meer zichtbaar is. -->
