@@ -128,32 +128,55 @@
       Dit is een schoolproject
     </header>
 
+
+
+<section class="eerste_styling">
+  <form action="">
+    <h2>Vul de benodigde gegevens in</h2>
+    <fieldset>
+      <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+      <div>
+        <label>Dag<input type="number" id="day1" name="day" min="1" max="31" placeholder="DD" required></label>
+        <label>Maand<input type="number" id="month1" name="month" min="1" max="12" placeholder="MM" required></label>
+        <label>Jaar<input type="number" id="year1" name="year" max="2025" placeholder="JAAR" required></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <label>Telefoonnummer<input type="tel" placeholder="06-12345678" pattern="[0-9]{2}-[0-9]{8}" title="Voer een geldig Nederlands telefoonnummer" required></label>
+      <label>Emailadres<input type="email" placeholder="voorbeeld@domein.nl" required></label>
+    </fieldset>
+    <fieldset>
+      <legend>Had de overledene een bedrijf op naam staan?</legend>
+      <label><input type="radio" id="bedrijfJa"  name="bedrijfsConditie">Ja</label>
+      <label><input type="radio" id="bedrijfNee" name="bedrijfsConditie">Nee</label>
+      
+    </fieldset>
+  </form>
+</section>
+
+
     <!-- <section> -->
       <section>
         <form action="">
-          <h2>Vul de benodigde gegevens in</h2>
-          <fieldset>
+          <!-- <h2>Vul de benodigde gegevens in</h2> -->
+          <!-- <fieldset>
             <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+            <div>
             <label>Dag<input type="number" id="day1" name="day" min="1" max="31" placeholder="DD" required></label>
             <span>-</span>
             <label>Maand<input type="number" id="month1" name="month" min="1" max="12" placeholder="MM" required></label>
             <span>-</span>
             <label>Jaar<input type="number" id="year1" name="year" max="2025" placeholder="JAAR" required></label>
-
+          </div> -->
             <!-- OF
             <input type="date"> -->
 
 
-            <label>Telefoonnummer<input type="tel" placeholder="06-12345678" pattern="[0-9]{2}-[0-9]{8}" title="Voer een geldig Nederlands telefoonnummer" required></label>
+            <!-- <label>Telefoonnummer<input type="tel" placeholder="06-12345678" pattern="[0-9]{2}-[0-9]{8}" title="Voer een geldig Nederlands telefoonnummer" required></label>
             <label>Emailadres<input type="email" placeholder="voorbeeld@domein.nl" required></label>
-          </fieldset>
+          </fieldset> -->
 
-          <fieldset>
-            <legend>Had de overledene een bedrijf op naam staan?</legend>
-            <label><input type="radio" id="bedrijfJa"  name="bedrijfsConditie">Ja</label>
-            <label><input type="radio" id="bedrijfNee" name="bedrijfsConditie">Nee</label>
-            
-          </fieldset>
+          
 
           <fieldset id="bedrijfsVragen" hidden>
             <legend>Rechtsvorm</legend>

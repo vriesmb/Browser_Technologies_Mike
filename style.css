@@ -66,6 +66,7 @@ a {
   --ns-lightBlue: #0063d3;
   --ns-selectedGreen: #00a888;
   --ns-lightGray: #c4c5cb;
+  --ns-transparentGray: rgba(164, 164, 164, 0.25);
 
   padding: 0;
   margin: 0;
@@ -119,6 +120,128 @@ header {
   flex-direction: column;
 }
 
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
+.eerste_styling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: auto;
+
+  & div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  & input {
+    min-width: 5rem;
+  }
+}
+
+input[type="number"],
+input[type="tel"],
+input[type="email"] {
+  padding: var(--spacing-xs);
+  font-size: 1rem;
+
+  box-sizing: border-box;
+  border: 0px solid red;
+
+  &:valid {
+    color: var(--ns-lightBlue);
+    background: var(--ns-transparentGray);
+    border: 0px solid red;
+  }
+
+  &:user-invalid {
+    color: red;
+    background: var(--ns-lightGray);
+    border: 1px solid red;
+  }
+}
+
+input[type="tel"],
+input[type="email"] {
+  padding: var(--spacing-xs);
+  font-size: 1rem;
+}
+
+label:has(:user-valid)
+  ~ label:has(:user-valid)
+  ~ label:has(:user-valid)::after {
+  color: green;
+  content: "✅";
+}
+
+label:has(input[type="number"]),
+label:has(input[type="tel"]),
+label:has(input[type="email"]) {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+form {
+  font-family: "NSSans", sans-serif;
+  width: 75%;
+}
+
+legend {
+  padding-bottom: var(--spacing-xs);
+}
+
+fieldset {
+  gap: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+}
+
+body section:first-of-type {
+  padding: var(--spacing-lg);
+}
+
+body > section {
+  background-color: #f1f6ff;
+}
+
+@media screen and (max-width: 580px) {
+  body section:first-of-type {
+    --spacing-lg: 0.5rem;
+  }
+  .eerste_styling {
+    & div {
+      display: flex;
+      gap: 0;
+      align-items: start;
+      flex-direction: column;
+    }
+  }
+}
+
+/* @media screen and (min-width: 280px) {
+  body section:first-of-type {
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 2.5rem;
+
+    --heading-xl: 1.6rem;
+    --heading-l: 1.5rem;
+    --heading-md: 1.2rem;
+  }
+} */
+
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+/* -------------------------------------------------- */
+
 input {
   border-radius: 0.25rem;
   background-color: white;
@@ -137,10 +260,10 @@ input[type="radio"] {
   background-color: red;
 }
 
-label::before {
+/* label::before {
   content: "✓";
   opacity: 0;
-}
+} */
 
 /* --------------------------- */
 
@@ -183,13 +306,16 @@ input[type="radio"]::before {
   background-color: var(--ns-selectedGreen);
 }
 
-label {
+/* label {
   display: flex;
   gap: 1rem;
-}
+} */
+
+/* 
+accent-color voor checkbox radio en range en progress */
 
 fieldset {
-  border: 0;
+  border: none;
 }
 
 input[type="radio"]:checked::before {
@@ -234,10 +360,19 @@ label:has(input:user-valid) {
     content: "✓";
     color: green;
     opacity: 1;
-    transition: 1500ms;
+    transition: 2000ms;
   }
 }
 
+label:has(input) {
+  &::before {
+    content: "✗";
+    color: gray;
+    opacity: 0;
+    transition: 2000ms;
+    width: 1rem;
+  }
+}
 /* .fieldAnimation {
   transition: height 0.4s ease-out;
   height: auto;
@@ -289,10 +424,6 @@ voor uitrekenen values */
 /* <progress>
 of <meter>
 voor progressiebalken/meters */
-
-body section:first-of-type {
-  padding: var(--spacing-md);
-}
 
 /* grayout gedeelte van de select experiment met de vink overig */
 /* fieldset select:has(+ label:has([name="overig_comp_cat"]:checked)) {
