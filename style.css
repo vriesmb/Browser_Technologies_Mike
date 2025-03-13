@@ -130,6 +130,8 @@ header {
   align-items: center;
   width: 100dvw;
   height: auto;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 
   & div {
     display: flex;
@@ -137,14 +139,13 @@ header {
     align-items: center;
   }
 
-  & input {
-    min-width: 5rem;
-  }
+  /* & input {
+    min-width: 3rem;
+  } */
 }
-
-input[type="number"],
-input[type="tel"],
-input[type="email"] {
+form:first-of-type input[type="number"],
+form:first-of-type input[type="tel"],
+form:first-of-type input[type="email"] {
   padding: var(--spacing-xs);
   font-size: 1rem;
 
@@ -164,10 +165,22 @@ input[type="email"] {
   }
 }
 
+select {
+  padding: var(--spacing-xs);
+  font-size: 1rem;
+
+  box-sizing: border-box;
+  border: 0px solid red;
+}
+
 input[type="tel"],
 input[type="email"] {
   padding: var(--spacing-xs);
   font-size: 1rem;
+}
+
+.bedrijfsVragen fieldset div {
+  flex-direction: column;
 }
 
 label:has(:user-valid)
@@ -175,7 +188,14 @@ label:has(:user-valid)
   ~ label:has(:user-valid)::after {
   color: green;
   content: "✅";
+  /* --fieldset-color: green; */
 }
+
+/* 
+label :user-valid::after {
+  color: green;
+  content: "✅";
+} */
 
 label:has(input[type="number"]),
 label:has(input[type="tel"]),
@@ -194,12 +214,21 @@ form {
 
 legend {
   padding-bottom: var(--spacing-xs);
+  /* color: var(--fieldset-color); */
 }
 
 fieldset {
   gap: var(--spacing-xs);
   display: flex;
-  flex-direction: column;
+}
+fieldset[hidden],
+form[hidden] {
+  display: none;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: row;
 }
 
 body section:first-of-type {
@@ -334,10 +363,12 @@ input[type="radio"]:focus {
 /* ---------------------- */
 
 #bedrijfsVragen {
-  transition: height 0.4s ease-out, display 0.4s ease-out;
+  transition: height 0.4sease-out, display 0.4sease-out;
   transition-behavior: allow-discrete;
   height: auto;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
 
   @starting-style {
     height: 0;
