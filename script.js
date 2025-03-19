@@ -49,9 +49,16 @@ const totalPersonalBalanceInheritance = document.querySelector(
 
 
 
+
+
+
 totalValues.forEach((value) => {
     value.removeAttribute("hidden");
 });
+
+
+
+
 
 
 // Balance Inheritance Calculation
@@ -99,15 +106,17 @@ function totalBalanceInheritanceCalculation() {
 }
 
 function totalPersonalBalanceInheritanceCalculation() {
-    let authorized = 1;
-    if (authorizedPersonsField.value < 2) {
-        authorized = 1;
-    } else {
+    let authorized = 1; // Variable voor default state
+    if (authorizedPersonsField.value > 1) {
+        // Als de waarde van authorized groter is dan 1 dan wordt de waarde van authorized gelijk aan de waarde van de inputfield
         authorized = authorizedPersonsField.value;
     }
 
     const total = totalBalanceInheritanceCalculation() / authorized;
+    // hier pak je het totaal van de berekening en deel je door aantal rechthebbende personen
+    // Dit allemaal doe je zodat er geen -infinity komt te staan als er geen waarde is ingevuld
 
+    // uitkomst vd variable pakken door return te doen, want je wilt niet de som/formule/functie pakken maar de uitkomst
     return total;
 }
 
@@ -118,7 +127,11 @@ function calculateTotal() {
     totalBalanceInheritance.textContent = `Totaal: €${totalBalanceInheritanceCalculation().toFixed(2)}`;
 
     totalPersonalBalanceInheritance.textContent = `Per persoon: €${totalPersonalBalanceInheritanceCalculation().toFixed(2)}`;
+
+    // afronding gedeelte met toFixed(2) zorgt ervoor dat er 2 decimalen achter de komma komen te staan
 }
+
+
 
 balanceInheritanceFields.forEach((field) => {
     document.addEventListener("DOMContentLoaded", () => {
@@ -184,10 +197,7 @@ function hideOnLoad() {
 hideOnLoad();
 
 
-
-
-
-
+// LOCAL STORAGE
 
 const inputFields = document.querySelectorAll("input");
 
