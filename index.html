@@ -125,18 +125,26 @@
           stroke-width="0"
         ></path>
       </svg>
-      Dit is een schoolproject
+      <p>Dit is een schoolproject</p>
     </header>
 
-
+<section>
+  <picture>
+    <source srcset="https://www.ns.nl/fe-platform-static/apps/dynamic-route-pages/1.14.0/assets/img/met-de-trein-reizen.jpg" type="image/webp">
+    <img src="images/hero-image.jpg" alt="Hero image">
+  </picture>
+</section>
 
 <section class="eerste_styling">
   <form method="post">
     <h2>Vul de benodigde gegevens in</h2>
-    <fieldset>
-      <legend>Overlijdensdatum</legend>
-      <label>Vul dat datum in <input type="date" max="2025-12-31"></label>
-    </fieldset>
+    <div>
+      <fieldset>
+        <legend>Overlijdensdatum</legend>
+        <label>Vul dat datum in <input type="date" max="2025-12-31"></label>
+      </fieldset>
+    </div>
+    <div>
     <fieldset>
       <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
       <div>
@@ -145,14 +153,18 @@
         <label>Jaar<input type="number" id="year1" name="year" max="2025" placeholder="JAAR" required></label>
       </div>
     </fieldset>
+    </div>  
+    <div>
     <fieldset>
       <legend>Geef de gegevens op</legend>
       <label>Telefoonnummer<input type="tel" id="phone_nr" placeholder="06-12345678" pattern="[0-9]{2}-[0-9]{8}" title="Voer een geldig Nederlands telefoonnummer" required></label>
       <label>Emailadres<input type="email" id="email_adress" placeholder="voorbeeld@domein.nl" required></label>
     </fieldset>
+  </div>
+  <div>
     <fieldset>
+      <legend>Wat was uw relatie met de overledene</legend>
       <label>
-        Wat was uw relatie met de overledene
         <select id="relationship">
           <optgroup label="Vaak gekozen">
             <option>Echtgenoot of geregistreerd partner</option>
@@ -172,6 +184,8 @@
         </select>
       </label>
     </fieldset>
+  </div>
+  <div>
     <fieldset>
       <legend>Had de overledene een bedrijf op naam staan?</legend>
       <div>
@@ -196,8 +210,156 @@
         
       
     </fieldset>
+    </div>
+
+
+
+    <!-- ----------------- -->
+    <!-- FORMULE ONDERDEEL -->
+    <!-- ----------------- -->
+    
+
+    <fieldset class="balance-inheritance">
+      <div>
+        <h2>Roerende zaken</h2>
+      <div class="general-value">
+        <h3>gemeenschappelijk vermogen</h3>
+        <label>
+          Inboedel
+          <input required type="number" name="g-inboedel" id="g-inboedel">
+        </label>
+        <label>
+          Vervoersmiddel(en)
+          <input required type="number" name="g-vervoersmiddel" id="g-vervoersmiddel">
+        </label>
+        <label>
+          Kunst en Antiek
+          <input required type="number" name="g-kunst" id="g-kunst">
+        </label>
+        <label>
+          Overige roerende zaken
+          <input required type="number" name="g-overig" id="g-overig">
+        </label>
+        <!-- <p data-total-general-value=""></p> -->
+        <!-- totaal -->
+      </div>
+
+      <div class="private-value">
+        <h3>Privévermogen</h3>
+        <label>
+          Inboedel
+          <input required type="number" name="p-inboedel" id="p-inboedel">
+        </label>
+        <label>
+          Vervoersmiddel(en)
+          <input required type="number" name="p-vervoersmiddel" id="p-vervoersmiddel">
+        </label>
+        <label>
+          Kunst en Antiek
+          <input required type="number" name="p-kunst" id="p-kunst">
+        </label>
+        <label>
+          Overige roerende zaken
+          <input required type="number" name="p-overig" id="p-overig">
+        </label>
+      </div>
+      <!-- <p data-total-private-value=""></p> -->
+      <!-- totaal -->
+    </div>
+
+
+    <div>
+      <h2>Schulden</h2>
+
+      <div class="general-debt">
+        <h3>Gemeenschappelijke schulden</h3>
+        <label>
+          Hypotheek
+          <input required type="number" name="g-mortgage" id="g-mortgage">
+        </label>
+        <label>
+          Schenking
+          <input required type="number" name="g-gift" id="g-gift">
+        </label>
+      </div>
+      <!-- <p data-total-general-debt="" hidden></p> -->
+      <!-- totaal -->
+
+      <div class="private-debt">
+        <h3>Privé schulden</h3>
+        <label>
+          Hypotheek
+          <input required type="number" name="p-mortgage" id="p-mortgage">
+        </label>
+        <label>
+          Schenking
+          <input required type="number" name="p-gift" id="p-gift">
+        </label>
+      </div>
+      <!-- <p data-total-private-debt="" hidden></p> -->
+      <!-- totaal -->
+    </div>
+
+      
+    <div class="funeral-expenses">
+        <h2>Uitgaven Uitvaart</h2>
+        <label>
+          Ceremonie
+          <input required type="number" name="ceremony" id="ceremony">
+        </label>
+        <label>
+          Catering
+          <input required type="number" name="catering" id="catering">
+        </label>
+        <!-- <p data-total-funeral-expenses="" hidden></p> -->
+      <!-- totaal -->
+    </div>
+
+    <label>
+      Aantal gemachtigden
+      <input required type="number" name="authorized-persons" id="authorized-persons" placeholder="Aantal personen">
+    </label>
+
+
+    <p data-total-balance-inheritance="" hidden></p>
+
+    <p data-total-personal-balance-inheritance="" hidden></p>
+      <!-- gezamelijk compleet totaal -->
+
+      <!-- persoonlijk aandeel compleet totaal -->
+    </fieldset>
+
+
+
   </form>
-  <form method="post" class="bedrijfsVragen">
+  
+  
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form method="post" class="bedrijfsVragen">
     <h2>Bedrijfsgegevens</h2>
     <fieldset>
       <legend>Waarde ondernemingsvermogen</legend>
@@ -210,13 +372,55 @@
      
       
     </fieldset>
-  </form>
-</section>
+  </form> -->
+
+
+
+
+
+
+
+
+<!-- 
+  <div>
+    <fieldset>
+      <legend>Had de overledene een bedrijf op naam staan?</legend>
+      <div>
+        <label><input type="radio" id="bedrijfJa"  name="bedrijfsConditie">Ja</label>
+        <label><input type="radio" id="bedrijfNee" name="bedrijfsConditie">Nee</label>
+      </div>
+    </fieldset>
+    <fieldset class="bedrijfsVragen">
+      <legend>Rechtsvorm</legend>
+      <label><input class="inputsSelected" name="rechtsvorm" type="radio">B.V.</label>
+      <label><input class="inputsSelected" name="rechtsvorm" type="radio">N.V.</label>
+      <label><input class="inputsSelected" name="rechtsvorm" type="radio">V.O.F.</label>
+      <label><input class="inputsSelected" name="rechtsvorm" type="radio">Eenmanszaak</label>
+
+        <fieldset>
+          <label>
+          <input name="rechtsvorm" id="overigInput" type="radio">
+          Overig
+          </label>
+          <input data-for="overigInput" type="text">
+        </fieldset>
+        
+      
+    </fieldset>
+    </div> -->
+
+
+
+
+
+
+
+
 
 
     <!-- <section> -->
-      <section>
-        <form action="">
+      <!-- <section>
+        <form action=""> -->
           <!-- <h2>Vul de benodigde gegevens in</h2> -->
           <!-- <fieldset>
             <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
@@ -238,12 +442,12 @@
           
 
           
-          <fieldset>
+          <!-- <fieldset>
             <legend>Samenstelling erfenis</legend>
             <label>IBAN <input type="text" placeholder="NL20INGB0001234567" pattern="NL[0-9]{2}[A-Z0-9]{14}" title="Voer een geldig Nederlands IBAN in (NL + 18 cijfers/letters)" required></label>
           </fieldset>
         </form>
-      </section>
+      </section> -->
 
 
 
@@ -251,7 +455,7 @@
 
 
 
-
+<!-- 
 
     <form action="">
       <fieldset>
@@ -264,7 +468,7 @@
         
         
         
-        
+         -->
         
         
         
@@ -273,15 +477,15 @@
 
 
         <!-- inputmode werkt 99% op alle devices en het is een enhancement prettig dus -->
-      </fieldset>
-    </form>
+      <!-- </fieldset>
+    </form> -->
     <!-- </section> -->
 
     <!-- <div>
       form validator
     </div> -->
 
-    <form action="">
+    <!-- <form action="">
       <fieldset disabled>
         <legend></legend>
         <label>Name:</label>
@@ -293,7 +497,7 @@
         <label for="text-bsn">Name:</label>
         <input type="number" max="9" required id="text-bsn" />
       </fieldset>
-    </form>
+    </form> -->
     <script src="script.js"></script>
   </body>
 </html>

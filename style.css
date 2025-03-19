@@ -13,7 +13,7 @@ en low-bandwidth situaties. */
   src: url("/fonts/nssans-bolditalic\ 1.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -21,7 +21,7 @@ en low-bandwidth situaties. */
   src: url("/fonts/nssans-regular\ 1.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -29,7 +29,7 @@ en low-bandwidth situaties. */
   src: url("/fonts/nssans-italic\ 1.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -37,7 +37,7 @@ en low-bandwidth situaties. */
   src: url("/fonts/nssans-bold\ 1.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -45,7 +45,7 @@ en low-bandwidth situaties. */
   src: url("/fonts/nssans-demi\ 1.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 a {
@@ -71,15 +71,15 @@ a {
   padding: 0;
   margin: 0;
 
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 2.5rem;
+  --spacing-xs: clamp(0.5rem, 1vw, 1rem);
+  --spacing-sm: clamp(1rem, 1vw, 1.5rem);
+  --spacing-md: clamp(1.5rem, 1vw, 2rem);
+  --spacing-lg: clamp(2rem, 1vw, 2.5rem);
+  --spacing-xl: clamp(2.5rem, 1vw, 3rem);
 
-  --heading-xl: 1.6rem;
-  --heading-l: 1.5rem;
-  --heading-md: 1.2rem;
+  --heading-xl: clamp(1.25rem, 2.5vw, 2rem);
+  --heading-l: clamp(1.1rem, 2.5vw, 1.5rem);
+  --heading-md: clamp(1rem, 2.5vw, 1.25rem);
 
   --font-NS: "NSSans";
 }
@@ -89,13 +89,13 @@ a {
 /* -------------------------------------------------- */
 
 h2 {
-  font-size: var(--heading-l);
+  font-size: var(--heading-xl);
   font-weight: normal;
   font-style: normal;
   font-family: var(--font-NS), sans-serif;
 }
 h3 {
-  font-size: var(--heading-md);
+  font-size: var(--heading-l);
   font-weight: normal;
   font-style: normal;
   font-family: var(--font-NS), sans-serif;
@@ -124,6 +124,7 @@ header {
 /* -------------------------------------------------- */
 /* -------------------------------------------------- */
 
+
 .eerste_styling {
   display: flex;
   justify-content: center;
@@ -132,6 +133,12 @@ header {
   height: auto;
   flex-direction: column;
   gap: var(--spacing-xl);
+
+  padding: var(--spacing-lg);
+
+  & h2{
+    color: var(--ns-darkBlue);
+  }
 
   & div {
     display: flex;
@@ -207,14 +214,15 @@ label:has(input[type="email"]) {
   width: fit-content;
 }
 
-form {
-  font-family: "NSSans", sans-serif;
-  width: 75%;
-}
+
 
 legend {
-  padding-bottom: var(--spacing-xs);
-  /* color: var(--fieldset-color); */
+  font-weight: 600;
+    color: #003082;
+    border-left: 3px solid var(--ns-yellow);
+    padding-bottom: 0;
+    padding-left: .5em;
+    margin-bottom: 1em;
 }
 
 fieldset {
@@ -228,7 +236,7 @@ form[hidden] {
 
 fieldset {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 body section:first-of-type {
@@ -238,6 +246,20 @@ body section:first-of-type {
 body > section {
   background-color: #f1f6ff;
 }
+
+body section:first-of-type {
+  width: 100dvw;
+  height: 24dvh;
+  padding: 0;
+}
+
+body section:first-of-type img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 @media screen and (max-width: 580px) {
   body section:first-of-type {
@@ -278,6 +300,7 @@ input {
   color: #003082;
   text-overflow: ellipsis;
   border: none;
+  padding: .5rem;
 }
 
 input[type="radio"] {
@@ -298,8 +321,18 @@ input[type="radio"] {
 
 form {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex-direction: column;
+  font-family: "NSSans", sans-serif;
+  width: 100%;
+}
+
+form > div{
+    border: none;
+    border-bottom: 3px solid #ffc917;
+    padding-bottom: 2rem;
+    background-color: #00000017;
+    padding: 2rem;
 }
 
 input[type="radio"] {
@@ -346,6 +379,15 @@ accent-color voor checkbox radio en range en progress */
 fieldset {
   border: none;
 }
+
+/* 
+div -internal-datetime-container{
+  padding: 0.5rem;
+  background-color: var(--ns-lightGray);
+} */
+
+/* -webkit-datetime-edit-text */
+
 
 input[type="radio"]:checked::before {
   transform: scale(1);
@@ -404,6 +446,60 @@ label:has(input) {
     width: 1rem;
   }
 }
+
+/* --------------- */
+/* FORMULE GEDEELTE */
+/* --------------- */
+
+
+.balance-inheritance{
+  label:has(input[type="number"]){
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+    width: fit-content;
+    flex-direction: column;
+
+    position: relative;
+    &::before{
+      content: "€";
+      font-weight: 600;
+      position: absolute;
+      bottom: 12%;
+      left: .75rem;
+      opacity: 1;
+    }
+
+    &:has(input[name="authorized-persons"]) {
+      &::before {
+        content: "";
+      }
+ 
+      & input {
+        padding-left: 0.75rem;
+      }
+    }
+    
+  }
+  & label input[type="number"]{
+    padding-left: var(--spacing-lg);
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+
 /* .fieldAnimation {
   transition: height 0.4s ease-out;
   height: auto;
