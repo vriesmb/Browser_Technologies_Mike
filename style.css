@@ -514,7 +514,7 @@ form div:nth-of-type(3) fieldset label:last-of-type::after{
 
 form div:nth-of-type(3) fieldset label:first-of-type::after{
   opacity: 0;
-  content: "Gebruik een geldig format: 06-12345678 OF 0612345678";
+  content: "Gebruik een geldig format: 06.. of 06-..";
   margin-top: 2%;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
 } 
@@ -522,7 +522,7 @@ form div:nth-of-type(3) fieldset label:first-of-type::after{
 form div:nth-of-type(3) fieldset label:last-of-type:has(:user-invalid)::after{
   color: red;
   content: "Gebruik een geldig format: met naam@domein";
-  width: 51%;
+  width: 100%;
   opacity: 1;
   margin-top: 2%;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
@@ -530,8 +530,8 @@ form div:nth-of-type(3) fieldset label:last-of-type:has(:user-invalid)::after{
 
 form div:nth-of-type(3) fieldset label:first-of-type:has(:user-invalid)::after{
   color: red;
-  content: "Gebruik een geldig format: 06-12345678 OF 0612345678";
-  width: 51%;
+  content: "Gebruik een geldig format: 06.. of 06-..";
+  width: 100%;
   opacity: 1;
   margin-top: 2%;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
