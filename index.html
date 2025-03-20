@@ -135,9 +135,8 @@
   </picture>
 </section>
 
-<section class="eerste_styling">
   <form method="post">
-    <h2>Vul de benodigde gegevens in</h2>
+    <h2>Vul de algemene gegevens in</h2>
     <div>
       <fieldset>
         <legend>Overlijdensdatum</legend>
@@ -148,10 +147,16 @@
     <fieldset>
       <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
       <div>
-        <label>Dag<input type="number" id="day1" name="day" min="1" max="31" placeholder="DD" required></label>
-        <label>Maand<input type="number" id="month1" name="month" min="1" max="12" placeholder="MM" required></label>
-        <label>Jaar<input type="number" id="year1" name="year" max="2025" placeholder="JAAR" required></label>
+        <div>
+          <label>Dag<input type="number" id="day1" name="day" min="1" max="31" placeholder="DD" required></label>
+          <label>Maand<input type="number" id="month1" name="month" min="1" max="12" placeholder="MM" required></label>
+        </div>
+        <div>
+          <label>Jaar<input type="number" id="year1" name="year" max="2025" placeholder="JAAR" required></label>
+        </div>
       </div>
+        
+      
     </fieldset>
     </div>  
     <div>
@@ -195,6 +200,7 @@
     </fieldset>
     <fieldset class="bedrijfsVragen">
       <legend>Rechtsvorm</legend>
+      <div>
       <label><input class="inputsSelected" name="rechtsvorm" type="radio">B.V.</label>
       <label><input class="inputsSelected" name="rechtsvorm" type="radio">N.V.</label>
       <label><input class="inputsSelected" name="rechtsvorm" type="radio">V.O.F.</label>
@@ -205,9 +211,9 @@
           <input name="rechtsvorm" id="overigInput" type="radio">
           Overig
           </label>
-          <input data-for="overigInput" type="text">
+          <!-- <input data-for="overigInput" type="text"> -->
         </fieldset>
-        
+      </div>
       
     </fieldset>
     </div>
@@ -221,7 +227,7 @@
 
     <fieldset class="balance-inheritance">
       <div>
-        <h2>Roerende zaken</h2>
+        <h2>2. Samenstelling van de erfenis</h2>
       <div class="general-value">
         <h3>gemeenschappelijk vermogen</h3>
         <label>
@@ -303,6 +309,7 @@
       
     <div class="funeral-expenses">
         <h2>Uitgaven Uitvaart</h2>
+        <div class="funeral-expenses-styling">
         <label>
           Ceremonie
           <input required type="number" name="ceremony" id="ceremony">
@@ -311,6 +318,7 @@
           Catering
           <input required type="number" name="catering" id="catering">
         </label>
+      </div>
         <!-- <p data-total-funeral-expenses="" hidden></p> -->
       <!-- totaal -->
     </div>
@@ -334,7 +342,6 @@
   </form>
   
   
-</section>
 
 
 
