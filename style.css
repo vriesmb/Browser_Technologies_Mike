@@ -345,7 +345,7 @@ label:has(+ input:user-valid)
     content: "3/3 | Valide Datum";
     position: absolute;
     right: 0;
-    top: 118%;
+    top: 112%;
     scale: 1;
 } 
 

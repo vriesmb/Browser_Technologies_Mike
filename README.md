@@ -94,6 +94,86 @@ Ik heb de 3 meest voorkomende opties weergegeven. Het is een prototype dus het g
 ![Donderdag 13 Mar - option_optgroup](./images/option_optgroup.png)
 ![Donderdag 13 Mar - dropdown foto](./images/dropdown.JPG)
 
+
+<summary><strong>week tot 20 Mar - Browser Tech</strong></summary>
+
+
+  ![20 maart - styling op containers van vragen](./images/validatie_3_dates.png)
+  Deze 3 dates hadden een selecter van 3 :has-es en de laaste zou een ::after krijgen om de gebruiker te laten weten dat de 3 inputs user-valid zijn. echter ging ik ze wat stylen om goed op desktop te laten zien en mobiel, maar daarvoor moest ik divs gebruiken. daardoor ging de validatie code stuk.
+  ![20 maart - fix](./images/validatie.3.png)
+  als oplossing moest ik de selector wat aanpassen en de div styling aanpassen. ik dat als volgt gedaan: 
+
+  ![20 maart - fix](./images/validatie.1.png)
+  bovenaan de grid die ik heb gerealiseerd om dit te krijgen:
+
+  ![20 maart - fix](./images/validatie.2.png)
+
+  maar nogsteeds werkte allen mijn enkele validation vinkjes.
+  nu de section validator fixen:
+
+  ![20 maart - fix](./images/fix_validation.png)
+  na een half uur puzzelen ben ik er met deze selector goed vanaf gekomen.
+
+  ![20 maart - fix](./images/validation_result_d.png)
+  ![20 maart - fix](./images/validation_result_m.png)
+  met een nice messsage krijgt de gebruiker nu meer duidelijke validatie en weten ze het goed hebben ingevuld, ik vind dat dit nodig is omdat je handmatig een datum in typt en niet een datum picker gebruikt, dmv de min en max + validatie weetje dat het een valide datum is.
+
+
+
+  ![20 maart - fix](./images/message_error.png)
+  Error messages toegevoegd bij user:invalid. Wel zo prettig dat de gebruiker feedback krijgt als er iets niet goed is. Een gewoon kruis is zo agressief, nu duidelijk in welk format het moet en wat er aangepast moet worden.
+
+
+### BEREKENING samensetlling erfenis - sectie
+ ![20 maart - fix](./images/overheid_theorie.png)
+ ![20 maart - fix](./images/theorie_formule_achter_berekening.png)
+ dit is de genoteerde formule achter het formulier van de overheid om het overzicht te bewaren.
+
+ ![20 maart - fix](./images/js_code_consts.png)
+ om de code zo overzichtelijk te houden, duidelijke benamingen en comments.
+
+
+  ![20 maart - fix](./images/js_code_hiden.png)
+  zorgen dat de code worden getoond. standaard op hidden zodat als de JS het niet doet er niets zichtbaar berekend gaat worden. progressive enhancement
+
+  ![20 maart - fix](./images/secties_berekeningen.png)
+  hier per sectie de berekening volgens formulie per sectie uitvoeren en opslaan.
+  deze worden dan gegbruikt in de formule van de subtotaalberekening
+
+  ![20 maart - fix](./images/js_subtotaal.png)
+  hier wordt een subtotaal berekend door alle sectie waardes te pakken en uit te rekenen
+  door return pakken we de numerieke waarden en kunnen we deze gebruiken in de laatste fase 
+
+  ![20 maart - fix](./images/js_per_persoon.png)
+  berekening toaal per persoon en alleen delen door aantal ingevuld in value als hij hoger is dan 1 anders pakken de default value
+
+  ![20 maart - fix](./images/js_totaal.png)
+  totaal slotberekening en afronden op 2 decimalen met tofixed2.
+  en onderaan de fucntie om de gehele formule uit te voeren telkens als er een aanpassing aan een inputfield.value wordt gedaan.
+  
+  ![20 maart - fix](./images/styling_vragen.png)
+  de berekening sectie is nog niet gestyled, wel goed werkend qua technische formule en input waardes
+
+  ![20 maart - fix](./images/berekening.png)
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Notes jeremy keith gesprek
 
 #### Notes
