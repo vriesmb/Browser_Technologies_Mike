@@ -155,6 +155,9 @@ Ik heb de 3 meest voorkomende opties weergegeven. Het is een prototype dus het g
   de berekening sectie is nog niet gestyled, wel goed werkend qua technische formule en input waardes
 
   ![20 maart - fix](./images/berekening.png)
+  deels gestyled, voor overzichtelijkheid niet veel poespas. ook geen validatie checkmarks etc, gewoon clean houden, mensen moeten zelf de waardes juist invullen en alleen zij weten wat juist is. wel worden de eurotekens groen als ze ze hebben ingevuld.
+
+  
 
 
  
